@@ -2,10 +2,8 @@ package com.apple.product.controller;
 
 import com.apple.product.model.Manufacture;
 import com.apple.product.model.Product;
-import com.apple.product.model.ProductCategory;
 import com.apple.product.service.ManufactureService;
 import com.apple.product.service.ProductService;
-import org.graalvm.compiler.nodes.memory.address.PluginFactory_OffsetAddressNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
