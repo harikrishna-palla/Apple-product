@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -36,7 +37,7 @@ public class ProductCategoryServiceTest {
         productCategory.setCategoryId(1);
         productCategory.setCategoryName("Apple");
         productCategory.setCategoryDescription("Apple pvt ltd");
-        productCategory.setProducts(products);
+        productCategory.setProducts(Arrays.asList());
 
     }
     @Test
@@ -56,9 +57,9 @@ public class ProductCategoryServiceTest {
     }
     @Test
     public void insertProductCategoriesTest() throws Exception{
-        Mockito.when(productCategoryRepository.save(Mockito.any(ProductCategory.class))).thenReturn(productCategory);
+        Mockito.when(productCategoryRepository.saveAndFlush(Mockito.any(ProductCategory.class))).thenReturn(productCategory);
         productCategoryService.insertProductCategories(productCategory);
-        Mockito.verify(productCategoryRepository, Mockito.times(1)).save(productCategory);
+        Mockito.verify(productCategoryRepository, Mockito.times(1)).saveAndFlush(productCategory);
 
     }
     @Test

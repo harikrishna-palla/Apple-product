@@ -41,7 +41,8 @@ public class ProductCategoryService {
     }
     public void insertProductCategories(ProductCategory productCategory) {
         logger.trace("Product category info : "+productCategory.getCategoryName());
-/*        List<Product> products = productCategory.getProducts();
+        List<Product> products = productCategory.getProducts();
+        if(products.size()!=0) {
         products.forEach(product -> {
             product.setProductCategory(productCategory);
             List<Manufacture> manufactures = product.getManufactures();
@@ -51,10 +52,10 @@ public class ProductCategoryService {
             sales.forEach(sales1 -> sales1.setProduct(product));
             product.setSales(sales);
         });
-
+        }
         productCategory.setProducts(products);
-        productCategoryRepository.saveAndFlush(productCategory);*/
-        productCategoryRepository.save(productCategory);
+        productCategoryRepository.saveAndFlush(productCategory);
+     //   productCategoryRepository.save(productCategory);
     }
     public void updateProductCategories(ProductCategory productCategory) {
         productCategoryRepository.save(productCategory);
