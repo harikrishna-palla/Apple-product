@@ -65,8 +65,8 @@ public class SalesController {
         salesService.updateSales(sales);
         logger.info("Sales date successfully updated");
     }
-    @DeleteMapping("/sales/{saleId}")
-    public void deleteSales(@PathVariable Sales sales) {
+    @DeleteMapping("/sales")
+    public void deleteSales(@RequestBody Sales sales) {
         logger.info("sales data successfully deleted.");
         salesService.deleteSales(sales);
     }
